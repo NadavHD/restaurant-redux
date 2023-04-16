@@ -18,7 +18,7 @@ const ResDetails = () => {
           
         </div>
       </div>
-      <div className="d-flex justify-content-center text-center">
+      <div className="d-flex justify-content-center text-center text-white">
       <div >
         <h3>restaurant name:{details.name}</h3>
         <p>city:{details.city}</p>

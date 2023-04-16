@@ -15,12 +15,12 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div  >
       <Navbar />
-      <div className='d-flex flex-wrap justify-content-center gap-2'>
+      <div className='d-flex flex-wrap justify-content-center gap-2 '>
         {restaurantData.map((value, i) => {
           return (
-            <div className='border border-black   '>
+            <div className='border border-black home-color  '>
               <div key={i}> <img src={value.main_image} style={{ height: "250px", width: "350px", padding: "20px" }} alt="" />
               </div>
               <div className='px-2'>
@@ -41,7 +41,7 @@ const Home = () => {
       <div className='d-flex flex-wrap  justify-content-center   '>
       {arr_res.map((value,i)=>{
         return(
-          <div className=' border border-black m-5 px-2' key={i}>
+          <div className=' border border-black m-5 px-2 home-color ' key={i}>
           { <img style={{ height: "250px", width: "350px",padding:"20px"}} src={value.image} alt="" /> }
           <h1>name:{value.name}</h1>
           <p>city:{value.city}</p>

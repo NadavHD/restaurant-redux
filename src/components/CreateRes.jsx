@@ -23,10 +23,11 @@ const CreateRes = () => {
     }
     console.log(createObj);
     dispatch(addNewRes({ createItem: createObj }))
+    alert("new restaurant created")
   }
   return (
     <div style={{marginTop:"180px"}} className=" d-flex justify-content-center  ">
-      <div >
+      <div className="col-md-6" >
        
           <label>name</label>
           <input ref={nameRef} className="form-control"type="text"placeholder="enter name:" />
@@ -38,7 +39,9 @@ const CreateRes = () => {
           <input ref={priceRef}className="form-control" type="number" placeholder="enter price:"/>
           <label>cuision</label>
           <input ref={cuisionRef} className="form-control" type="text" placeholder="enter cuision:" />
-          <button className="btn btn-success my-4  mx-5" onClick={onAddClick}>Add new resturant</button>   
+          <div className="d-flex justify-content-center">
+          <button className="btn btn-success my-4   mx-5" onClick={onAddClick}>Add new resturant</button>  
+          </div> 
         <div className="d-flex justify-content-center">
           <Link to={'/'}><button className="btn btn-info btn-lg my-2" onClick={() => {
           }}>Back to home</button></Link>

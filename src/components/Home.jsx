@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { restaurantData } from './resturants'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteRes } from '../features/createSlice1'
 
 const Home = () => {
-  // const {id} = useParams()
 
   const arr_res = useSelector(state => state.createSlice1.createRes)
   const dispatch = useDispatch()

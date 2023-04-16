@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import './style.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -14,6 +14,7 @@ const Navbar = () => {
           <button onClick={()=>{
             nav()
           }} className='btn btn-dark  mx-2'>lets go</button>
+         <Link to={'/createres'}><button className='btn btn-danger' >add new restaurant</button></Link> 
           </div>
         
         </div>

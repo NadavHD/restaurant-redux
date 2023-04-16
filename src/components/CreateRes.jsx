@@ -1,89 +1,53 @@
 import React, { useRef } from "react";
-import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { addNewRes,deleteRes } from "../features/createSlice1";
+import { addNewRes, deleteRes } from "../features/createSlice1";
+import { Link, useNavigate } from "react-router-dom";
 
 const CreateRes = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
-  const onSubForm = (_bodyData)=>{
-    console.log(_bodyData);
-  }
-
-const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const nameRef = useRef()
   const cityRef = useRef()
   const imageRef = useRef()
   const priceRef = useRef()
   const cuisionRef = useRef()
-
-  const onAddClick = ()=>{
-    let createObj={
-        name:nameRef.current.value,
-        city:cityRef.current.value,
-        image:imageRef.current.value,
-        price:priceRef.current.value,
-        cuision:cuisionRef.current.value,
-        id:Date.now()
+  const onAddClick = () => {
+    let createObj = {
+      name: nameRef.current.value,
+      city: cityRef.current.value,
+      image: imageRef.current.value,
+      price: priceRef.current.value,
+      cuision: cuisionRef.current.value,
+      id: Date.now()
     }
     console.log(createObj);
-    dispatch(addNewRes({createItem:createObj}))
+    dispatch(addNewRes({ createItem: createObj }))
   }
   return (
-
-    <div className=" col-10 d-flex justify-content-center">
-      <form onSubmit={handleSubmit(onSubForm)} id="id_form">
-        <label>name</label>
-        <input ref={nameRef}
-          {...register("name", { required: true, minLength: 2 })}
-          className="form-control"
-          type="text"
-        />
-        {errors.name && <div className="text-danger">* Enter valid name</div>}
-        
-        <label>city</label>
-        <input ref={cityRef}
-          {...register("city", { required: true, minLength: 2 })}
-          className="form-control"
-          type="text"
-        />
-        {errors.city && <div className="text-danger">* Enter valid city</div>}
-        <label>image</label>
-        <input ref={imageRef}
-          {...register("image", { required: true, minLength: 2 })}
-          className="form-control"
-          type="text"
-        />
-        {errors.image && <div className="text-danger">* Enter valid image</div>}
-        <label>price</label>
-        <input ref={priceRef}
-          {...register("price", { required: true, minLength: 2 })}
-          className="form-control"
-          type="number"
-        />
-        {errors.price && <div className="text-danger">* Enter valid price</div>}
-        <label>cuision</label>
-        <input ref={cuisionRef}
-          {...register("cuision", { required: true, minLength: 2 })}
-          className="form-control"
-          type="text"
-        />
-        {errors.cuision && (
-          <div className="text-danger">* Enter valid cuision</div>
-        )}
-        
-        
-        <button onClick={onAddClick}>Add new resturant</button>
-        <button onClick={()=>{
+    <div style={{marginTop:"180px"}} className=" d-flex justify-content-center  ">
+      <div >
+       
+          <label>name</label>
+          <input ref={nameRef} className="form-control"type="text"placeholder="enter name:" />
+          <label>city</label>
+          <input ref={cityRef}className="form-control" type="text" placeholder="enter city:"/>
+          <label>image</label>
+          <input ref={imageRef}className="form-control"type="text" placeholder="enter image url:"/>
+          <label>price</label>
+          <input ref={priceRef}className="form-control" type="number" placeholder="enter price:"/>
+          <label>cuision</label>
+          <input ref={cuisionRef} className="form-control" type="text" placeholder="enter cuision:" />
+          <button className="btn btn-success my-5 mx-5" onClick={onAddClick}>Add new resturant</button>
+          <button className="btn btn-danger" onClick={() => {
             window.confirm("are you sure you want to delete") && dispatch(deleteRes())
-        }}>Delete</button>
-      </form>
-      
+          }}>Delete</button>
+        
+        <div className="d-flex justify-content-center">
+          <Link to={'/'}><button className="btn btn-info btn-lg" onClick={() => {
+          }}>Back to home</button></Link>
+        </div>
+      </div>
     </div>
   );
 };

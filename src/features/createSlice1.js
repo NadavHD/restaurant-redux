@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const KEY_LOCAL = 'resCreate';
 const initState=localStorage[KEY_LOCAL]?JSON.parse(localStorage[KEY_LOCAL]) : {
-    createRes: []
+    createRes: [] 
 }
 
 const createSlice1 = createSlice({

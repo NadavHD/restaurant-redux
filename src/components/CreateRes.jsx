@@ -38,13 +38,9 @@ const CreateRes = () => {
           <input ref={priceRef}className="form-control" type="number" placeholder="enter price:"/>
           <label>cuision</label>
           <input ref={cuisionRef} className="form-control" type="text" placeholder="enter cuision:" />
-          <button className="btn btn-success my-5 mx-5" onClick={onAddClick}>Add new resturant</button>
-          <button className="btn btn-danger" onClick={() => {
-            window.confirm("are you sure you want to delete") && dispatch(deleteRes())
-          }}>Delete</button>
-        
+          <button className="btn btn-success my-4  mx-5" onClick={onAddClick}>Add new resturant</button>   
         <div className="d-flex justify-content-center">
-          <Link to={'/'}><button className="btn btn-info btn-lg" onClick={() => {
+          <Link to={'/'}><button className="btn btn-info btn-lg my-2" onClick={() => {
           }}>Back to home</button></Link>
         </div>
       </div>

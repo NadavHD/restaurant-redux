@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { addNewRes,deleteRes } from "../features/createSlice";
+import { addNewRes,deleteRes } from "../features/createSlice1";
 
 const CreateRes = () => {
   const {
